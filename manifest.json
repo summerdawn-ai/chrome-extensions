@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Substack Archive Enhancer",
+  "version": "0.1.0",
+  "description": "Adds archive and unarchive controls to supported Substack post pages.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.substack.com/*"
+      ],
+      "js": [
+        "substack-archive-loader.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "substack-archive-enhancer.js"
+      ],
+      "matches": [
+        "https://*.substack.com/*"
+      ]
+    }
+  ]
+}
