@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Substack Archiver icon">
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="#ff6719" />
+  <g fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="28" y="34" width="72" height="18" rx="4" />
+    <path d="M35 52v40a8 8 0 0 0 8 8h42a8 8 0 0 0 8-8V52" />
+    <path d="M52 72h24" />
+  </g>
+</svg>
