@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.substack.com/*"
+        "*://*/*"
       ],
       "js": [
         "substack-archiver-content-script.js"
@@ -26,7 +26,7 @@
         "substack-archiver-page-script.js"
       ],
       "matches": [
-        "https://*.substack.com/*"
+        "*://*/*"
       ]
     }
   ]

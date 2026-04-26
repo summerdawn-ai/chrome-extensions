@@ -1,7 +1,8 @@
 (() => {
   const SCRIPT_ID = "substack-archive-enhancer-page-script";
+  const { protocol, pathname } = window.location;
 
-  if (!window.location.pathname.startsWith("/p/")) {
+  if ((protocol !== "https:" && protocol !== "http:") || !pathname.startsWith("/p/")) {
     return;
   }
 
