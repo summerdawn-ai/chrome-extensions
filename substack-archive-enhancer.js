@@ -1,6 +1,7 @@
 (() => {
   const PATCH_KEY = "__substackArchiveEnhancer";
   const MENU_ITEM_ATTR = "data-substack-archive-menu-item";
+  const MOBILE_BUTTON_ATTR = "data-substack-archive-mobile-button";
   const TOAST_ATTR = "data-substack-archive-toast";
 
   if (window[PATCH_KEY]?.installed) {
@@ -233,6 +234,7 @@
 
   function refreshInjectedItems() {
     document.querySelectorAll(`[${MENU_ITEM_ATTR}]`).forEach(updateMenuItem);
+    document.querySelectorAll(`[${MOBILE_BUTTON_ATTR}]`).forEach(updateMobileButton);
   }
 
   function buildMenuItem(templateButton) {
@@ -330,8 +332,109 @@
     saveItem.parentElement.insertBefore(archiveItem, saveItem.nextSibling);
   }
 
+  function patchDialog(dialog) {
+    if (!dialog || dialog.querySelector(`[${MENU_ITEM_ATTR}]`)) {
+      return;
+    }
+
+    const items = [...dialog.querySelectorAll("button")];
+    const saveItem = items.find((item) => {
+      const text = item.textContent?.trim();
+      return text === "Save" || text === "Unsave";
+    });
+
+    if (!saveItem || !saveItem.parentElement) {
+      return;
+    }
+
+    const archiveItem = buildMenuItem(saveItem);
+    saveItem.parentElement.insertBefore(archiveItem, saveItem.nextSibling);
+  }
+
+  function updateMobileButton(button) {
+    const context = tryGetPostContext();
+    if (!button || !context) return;
+
+    button.setAttribute("aria-label", context.isArchived ? "Unarchive" : "Archive");
+    button.setAttribute("aria-pressed", context.isArchived ? "true" : "false");
+    button.classList.toggle("state-saved", context.isArchived);
+    updateArchiveIcon(button, context.isArchived);
+  }
+
+  function buildMobileButton(templateButton) {
+    const button = templateButton.cloneNode(true);
+    button.setAttribute(MOBILE_BUTTON_ATTR, "true");
+    button.removeAttribute("data-href");
+
+    const label = button.querySelector(".label");
+    if (label) label.remove();
+
+    button.classList.remove("has-label");
+    button.classList.add("no-label");
+
+    const icon = button.querySelector(".icon");
+    if (icon) {
+      icon.outerHTML = archiveIconSvg(24);
+    }
+
+    updateMobileButton(button);
+
+    button.addEventListener("click", async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const context = tryGetPostContext();
+      if (!context) return;
+
+      const nextState = !context.isArchived;
+      button.disabled = true;
+
+      try {
+        await setArchiveState(nextState);
+        refreshInjectedItems();
+        showToast(
+          nextState ? "Post archived" : "Post unarchived",
+          nextState ? "archive" : "undo",
+          nextState ? "View" : undefined,
+          nextState
+            ? () => {
+                window.location.href = "https://substack.com/home/archive";
+              }
+            : undefined
+        );
+      } catch (error) {
+        console.error(error);
+        showToast("Archive request failed");
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    return button;
+  }
+
+  function patchMobileBar() {
+    if (document.querySelector(`[${MOBILE_BUTTON_ATTR}]`)) {
+      return;
+    }
+
+    const saveButton = [...document.querySelectorAll("button.post-ufi-button.style-tabs")]
+      .find((button) => button.getAttribute("aria-label") === "Save");
+
+    if (!saveButton || !saveButton.parentElement) {
+      return;
+    }
+
+    const mobileButton = buildMobileButton(saveButton);
+    saveButton.parentElement.insertBefore(mobileButton, saveButton);
+  }
+
   function removeInjectedControls() {
     document.querySelectorAll(`[${MENU_ITEM_ATTR}]`).forEach((element) => {
+      element.remove();
+    });
+
+    document.querySelectorAll(`[${MOBILE_BUTTON_ATTR}]`).forEach((element) => {
       element.remove();
     });
   }
@@ -340,6 +443,8 @@
 
   function refreshUi() {
     document.querySelectorAll('[role="menu"]').forEach(patchMenu);
+    document.querySelectorAll('[role="dialog"]').forEach(patchDialog);
+    patchMobileBar();
     refreshInjectedItems();
   }
 
