@@ -282,7 +282,7 @@
           nextState ? "View" : undefined,
           nextState
             ? () => {
-                window.location.href = "https://substack.com/home/archive";
+                window.location.href = "https://substack.com/archive";
               }
             : undefined
         );
@@ -398,7 +398,7 @@
           nextState ? "View" : undefined,
           nextState
             ? () => {
-                window.location.href = "https://substack.com/home/archive";
+                window.location.href = "https://substack.com/archive";
               }
             : undefined
         );
