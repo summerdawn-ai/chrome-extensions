@@ -197,6 +197,23 @@
       </svg>`;
   }
 
+  function updateArchiveIcon(button, isArchived) {
+    const svg = button?.querySelector("svg");
+    if (!svg) return;
+
+    const [lid, body, divider] = svg.querySelectorAll("rect, path");
+    const strokeColor = isArchived ? "rgb(107, 114, 128)" : "currentColor";
+    const fillColor = isArchived ? "rgba(107, 114, 128, 0.22)" : "none";
+
+    svg.style.color = strokeColor;
+    svg.style.stroke = strokeColor;
+    svg.style.fill = "none";
+
+    lid?.setAttribute("fill", fillColor);
+    body?.setAttribute("fill", fillColor);
+    divider?.setAttribute("fill", "none");
+  }
+
   function updateMenuItem(button) {
     const context = tryGetPostContext();
     if (!button || !context) return;
@@ -211,6 +228,7 @@
     }
 
     button.setAttribute("aria-label", label);
+    updateArchiveIcon(button, context.isArchived);
   }
 
   function refreshInjectedItems() {
