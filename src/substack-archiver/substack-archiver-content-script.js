@@ -1,6 +1,10 @@
 (() => {
   const SCRIPT_ID = "substack-archive-enhancer-page-script";
 
+  if (!window.location.pathname.startsWith("/p/")) {
+    return;
+  }
+
   if (document.getElementById(SCRIPT_ID)) {
     return;
   }
