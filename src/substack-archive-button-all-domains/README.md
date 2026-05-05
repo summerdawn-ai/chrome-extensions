@@ -1,4 +1,4 @@
-# Substack Archive Button (Custom Domains)
+# Substack Archive Button (All Domains)
 
 Chrome extension that adds Archive and Unarchive controls to Substack post pages,
 including publications hosted on custom domains.

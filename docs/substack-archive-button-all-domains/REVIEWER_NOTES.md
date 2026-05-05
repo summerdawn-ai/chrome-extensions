@@ -1,10 +1,10 @@
-# Reviewer Notes — Substack Archive Button (Custom Domains)
+# Reviewer Notes — Substack Archive Button (All Domains)
 
 Thank you for reviewing this extension.
 
 ## What the extension does
 
-Substack Archive Button (Custom Domains) adds Archive and Unarchive controls to Substack
+Substack Archive Button (All Domains) adds Archive and Unarchive controls to Substack
 post pages, including publications hosted on custom domains.
 It calls the Substack `/api/v1/inbox/archive` API endpoint to archive or unarchive the
 current post, then shows a brief in-page toast confirmation.

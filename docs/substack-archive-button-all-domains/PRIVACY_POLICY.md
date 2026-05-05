@@ -1,11 +1,11 @@
-# Privacy Policy — Substack Archive Button (Custom Domains)
+# Privacy Policy — Substack Archive Button (All Domains)
 
-**Extension:** Substack Archive Button (Custom Domains)  
+**Extension:** Substack Archive Button (All Domains)
 **Last updated:** 2026-05-05
 
 ## Summary
 
-Substack Archive Button (Custom Domains) does not collect, transmit, or store any personal data.
+Substack Archive Button (All Domains) does not collect, transmit, or store any personal data.
 
 ## Data collected
 

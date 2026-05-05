@@ -1,8 +1,8 @@
-# Substack Archive Button (Custom Domains) — Store Listing
+# Substack Archive Button (All Domains) — Store Listing
 
 ## Name
 
-Substack Archive Button (Custom Domains)
+Substack Archive Button (All Domains)
 
 ## Short description (132 characters max)
 
@@ -10,7 +10,7 @@ Adds Archive and Unarchive buttons to Substack post pages, including publication
 
 ## Detailed description
 
-**Substack Archive Button (Custom Domains)** adds Archive and Unarchive controls directly
+**Substack Archive Button (All Domains)** adds Archive and Unarchive controls directly
 to Substack post pages — including Substack publications hosted on custom domains — so you
 can manage your reading archive without navigating away.
 

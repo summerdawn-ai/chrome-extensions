@@ -14,7 +14,7 @@ or packed directly from Chrome developer mode.
 | Variant | Folder | Domains |
 |---|---|---|
 | [Substack Archive Button](./src/substack-archive-button) | `src/substack-archive-button` | `substack.com` and `*.substack.com` only |
-| [Substack Archive Button (Custom Domains)](./src/substack-archive-button-all-domains) | `src/substack-archive-button-all-domains` | All HTTPS sites (for custom-domain Substack publications) |
+| [Substack Archive Button (All Domains)](./src/substack-archive-button-all-domains) | `src/substack-archive-button-all-domains` | All HTTPS sites (for custom-domain Substack publications) |
 
 Store listing and publishing docs are in [`docs/`](./docs).
 

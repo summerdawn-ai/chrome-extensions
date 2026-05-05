@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Substack Archive Button (Custom Domains)",
+  "name": "Substack Archive Button (All Domains)",
   "version": "1.0.0",
   "description": "Adds Archive and Unarchive buttons to Substack post pages, including publications on custom domains.",
   "homepage_url": "https://github.com/summerdawn-ai/chrome-extensions",
