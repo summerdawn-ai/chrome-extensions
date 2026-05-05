@@ -40,7 +40,7 @@ Substack-owned domains (`substack.com` and `*.substack.com`).
 ### Privacy
 
 The extension does not collect, transmit, or store any personal data. See the
-[Privacy Policy](PRIVACY_POLICY.md) for details.
+[Privacy Policy](https://docs.summerdawn.ai/chrome-extensions/substack-archive-button/PRIVACY_POLICY) for details.
 
 ## Category
 
