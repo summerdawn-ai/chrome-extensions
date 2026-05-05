@@ -1,7 +1,7 @@
 # Privacy Policy — Substack Archive Button
 
 **Extension:** Substack Archive Button  
-**Last updated:** 2025-05-01
+**Last updated:** 2026-05-05
 
 ## Summary
 

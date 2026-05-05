@@ -1,7 +1,7 @@
 # Privacy Policy — Substack Archive Button (Custom Domains)
 
 **Extension:** Substack Archive Button (Custom Domains)  
-**Last updated:** 2025-05-01
+**Last updated:** 2026-05-05
 
 ## Summary
 
