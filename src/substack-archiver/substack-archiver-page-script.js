@@ -8,6 +8,10 @@
     return;
   }
 
+  if (!window._preloads?.post) {
+    return;
+  }
+
   function getPostContext() {
     const post = window._preloads?.post;
     const inboxItem = post?.inboxItem;
