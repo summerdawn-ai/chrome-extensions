@@ -1,8 +1,16 @@
 (() => {
   const SCRIPT_ID = "substack-archive-enhancer-page-script";
-  const { protocol, pathname } = window.location;
+  const { pathname } = window.location;
 
-  if ((protocol !== "https:" && protocol !== "http:") || !pathname.startsWith("/p/")) {
+  if (!pathname.startsWith("/p/")) {
+    return;
+  }
+
+  const saveButtonSelector =
+    'button.post-ufi-button.style-tabs[aria-label="Save"],' +
+    'button.post-ufi-button.style-tabs[aria-label="Unsave"]';
+
+  if (!document.querySelector(saveButtonSelector)) {
     return;
   }
 
