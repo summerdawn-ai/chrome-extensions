@@ -1,30 +1,41 @@
 # Chrome Extensions
 
-Browser extension projects for summerdawn.ai.
+This repository contains Chrome extensions for summerdawn.ai.
 
-## Extensions
+## Overview
 
-### Substack Archive Button
+The current extensions add archive controls to Substack post pages.
 
-Adds Archive and Unarchive controls to Substack post pages.
+### Extensions
 
-Two variants are provided — each is a self-contained extension folder that can be loaded
-or packed directly from Chrome developer mode.
-
-| Variant | Folder | Domains |
-|---|---|---|
-| [Substack Archive Button](./src/substack-archive-button) | `src/substack-archive-button` | `substack.com` and `*.substack.com` only |
-| [Substack Archive Button (All Domains)](./src/substack-archive-button-all-domains) | `src/substack-archive-button-all-domains` | All HTTPS sites (for custom-domain Substack publications) |
+- [Substack Archive Button](./src/substack-archive-button/README.md): Adds Archive and Unarchive controls on `substack.com` and `*.substack.com` post pages.
+- [Substack Archive Button (All Domains)](./src/substack-archive-button-all-domains/README.md): Adds the same controls on Substack post pages, including publications hosted on custom domains.
 
 Store listing and publishing docs are in [`docs/`](./docs).
 
-## Local development
+## Development
 
 Load an extension unpacked from its folder under `src/`:
 
 1. Open `chrome://extensions`.
 2. Enable Developer mode.
-3. Click **Load unpacked** and select the desired variant folder.
+3. Click **Load unpacked**.
+4. Select the desired variant folder under `src/`.
+
+Pack an extension for local distribution or store submission:
+
+1. Open `chrome://extensions`.
+2. Enable Developer mode.
+3. Click **Pack extension**.
+4. Set the extension root directory to the desired folder under `src/`.
+
+## Contributing
+
+Contributions are welcome. Please fork the repository, create a focused branch for your change, and open a pull request with a clear description of what changed and why; issues are also welcome for bug reports and feature ideas.
+
+## Security
+
+We welcome responsible security reports. Please contact the repository owner privately with the details rather than opening a public issue, so the problem can be investigated and addressed before it is disclosed.
 
 ## License
 
