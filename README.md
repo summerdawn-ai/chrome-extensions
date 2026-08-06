@@ -1,6 +1,6 @@
 # Chrome Extensions
 
-This repository contains Chrome extensions for summerdawn.ai.
+Extensions for Chrome and other Chromium-based desktop browsers.
 
 ## Overview
 
