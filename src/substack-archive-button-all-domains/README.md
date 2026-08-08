@@ -4,13 +4,14 @@ Extension for Chrome to provide archive controls on Substack post pages, includi
 
 ## Overview
 
-This extension adds Archive and Unarchive controls to Substack post pages, including publications hosted on custom domains.
+This extension adds Archive and Unarchive controls to Substack post pages for logged-in users, including publications hosted on custom domains.
 
 It runs on all HTTPS sites so it can support Substack publications that use a custom domain. For Substack-owned domains only, use the [Substack Archive Button](../substack-archive-button/README.md).
 
 ### Version History
 
-- **1.0.0 (2026-05-05)**: Initial release for Substack pages on custom domains.
+- **1.0.1 (2026-08-08)**: Fix compatibility with current Substack pages, fix mobile button.
+- **1.0.0 (2026-05-05)**: Initial release.
 
 ## Installation
 
