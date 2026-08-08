@@ -423,7 +423,7 @@
     }
 
     const saveButton = [...document.querySelectorAll("button.post-ufi-button.style-tabs")]
-      .find((button) => button.getAttribute("aria-label") === "Save");
+      .find((button) => ["Save", "Unsave"].includes(button.getAttribute("aria-label")));
 
     if (!saveButton || !saveButton.parentElement) {
       return;
