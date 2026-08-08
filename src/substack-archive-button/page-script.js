@@ -361,7 +361,7 @@
 
     button.setAttribute("aria-label", context.isArchived ? "Unarchive" : "Archive");
     button.setAttribute("aria-pressed", context.isArchived ? "true" : "false");
-    button.classList.toggle("state-saved", context.isArchived);
+    button.classList.remove("state-saved");
     updateArchiveIcon(button, context.isArchived);
   }
 
@@ -430,7 +430,7 @@
     }
 
     const mobileButton = buildMobileButton(saveButton);
-    saveButton.parentElement.insertBefore(mobileButton, saveButton);
+    saveButton.parentElement.insertBefore(mobileButton, saveButton.nextSibling);
   }
 
   function removeInjectedControls() {
