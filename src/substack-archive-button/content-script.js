@@ -6,14 +6,6 @@
     return;
   }
 
-  const saveButtonSelector =
-    'button.post-ufi-button.style-tabs[aria-label="Save"],' +
-    'button.post-ufi-button.style-tabs[aria-label="Unsave"]';
-
-  if (!document.querySelector(saveButtonSelector)) {
-    return;
-  }
-
   if (document.getElementById(SCRIPT_ID)) {
     return;
   }

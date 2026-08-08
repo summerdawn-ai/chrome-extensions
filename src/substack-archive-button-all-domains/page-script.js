@@ -361,7 +361,7 @@
 
     button.setAttribute("aria-label", context.isArchived ? "Unarchive" : "Archive");
     button.setAttribute("aria-pressed", context.isArchived ? "true" : "false");
-    button.classList.toggle("state-saved", context.isArchived);
+    button.classList.remove("state-saved");
     updateArchiveIcon(button, context.isArchived);
   }
 
@@ -423,14 +423,14 @@
     }
 
     const saveButton = [...document.querySelectorAll("button.post-ufi-button.style-tabs")]
-      .find((button) => button.getAttribute("aria-label") === "Save");
+      .find((button) => ["Save", "Unsave"].includes(button.getAttribute("aria-label")));
 
     if (!saveButton || !saveButton.parentElement) {
       return;
     }
 
     const mobileButton = buildMobileButton(saveButton);
-    saveButton.parentElement.insertBefore(mobileButton, saveButton);
+    saveButton.parentElement.insertBefore(mobileButton, saveButton.nextSibling);
   }
 
   function removeInjectedControls() {
